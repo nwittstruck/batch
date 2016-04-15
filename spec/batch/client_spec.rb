@@ -8,14 +8,14 @@ RSpec.describe Batch::Client do
 
   # notification
   let(:group_id) {'test'}
-  let(:tokens) { ["123"] }
+  let(:tokens) { [""] }
 
   let(:title) { 'Title' }
   let(:body) { 'Body2' }
   let(:sandbox) { false }
 
   let(:custom_payload) { {:poll_id => 1} }
-  let(:notification) { Batch::Notification.new({group_id: group_id, tokens: tokens, title: title, body: body, custom_payload: custom_payload, sandbox: sandbox}) }
+  let(:notification) { Batch::Notification.new({group_id: group_id, tokens: tokens, title: title, body: body, custom_payload: custom_payload}) }
 
   #def initialize(group_id, tokens = [], custom_ids = [], title, body, custom_payload)
 
@@ -24,6 +24,7 @@ RSpec.describe Batch::Client do
       config.endpoint = endpoint
       config.api_key = api_key
       config.rest_api_key = rest_api_key
+      config.sandbox = sandbox
     end
   }
 

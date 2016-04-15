@@ -1,8 +1,12 @@
-require 'Faraday'
 require 'json'
 
 module Batch
   class Client
+    def initialize
+      # fail if the required params are not set:
+      raise(StandardError, 'Configuration is missing') unless Batch.endpoint && Batch.api_key && Batch.rest_api_key && !Batch.sandbox.nil?
+    end
+
     def send(notification)
       response = connection.post send_url, notification.payload
       return JSON.parse(response.body)

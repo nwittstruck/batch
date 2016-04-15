@@ -10,7 +10,8 @@ module Batch
         @keys = [
             :endpoint,
             :api_key,
-            :rest_api_key
+            :rest_api_key,
+            :sandbox
         ]
       end
     end

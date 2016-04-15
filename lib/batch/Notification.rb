@@ -7,7 +7,6 @@ module Batch
       @title = args[:title]
       @body = args[:body]
       @custom_payload = args[:custom_payload]
-      @sandbox = args[:sandbox]
     end
 
     def payload
@@ -22,7 +21,7 @@ module Batch
               "body": @body
           },
           "custom_payload": @custom_payload.to_json.to_s, # the API expects a string instead of a JSON object
-          sandbox: @sandbox
+          sandbox: Batch.sandbox
       }.to_json
     end
   end

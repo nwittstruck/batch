@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    batch-ruby (0.0.0)
+    batch (0.0.0)
       faraday
 
 GEM
@@ -30,7 +30,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  batch-ruby!
+  batch!
   rake
   rspec
 
