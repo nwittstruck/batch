@@ -31,7 +31,7 @@ RSpec.describe Batch::Client do
 
   it "can send a notification" do
     client = Batch::Client.new
-    response = client.send(notification)
+    response = client.send_notification(notification)
 
     expect(response['token']).to_not be_nil
   end
