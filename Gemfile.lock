@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    batch (0.0.2)
+    batch_push_notification (0.0.4)
       faraday
 
 GEM
@@ -30,7 +30,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  batch!
+  batch_push_notification!
   rake
   rspec
 

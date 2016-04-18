@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Batch::Client do
+RSpec.describe BatchPushNotification::Client do
 
   let(:endpoint) {"https://api.batch.com/1.0/"}
   let(:api_key) {""}
@@ -15,12 +15,12 @@ RSpec.describe Batch::Client do
   let(:sandbox) { false }
 
   let(:custom_payload) { {:poll_id => 1} }
-  let(:notification) { Batch::Notification.new({group_id: group_id, tokens: tokens, title: title, body: body, custom_payload: custom_payload}) }
+  let(:notification) { BatchPushNotification::Notification.new({group_id: group_id, tokens: tokens, title: title, body: body, custom_payload: custom_payload}) }
 
   #def initialize(group_id, tokens = [], custom_ids = [], title, body, custom_payload)
 
   before {
-    Batch.configure do |config|
+    BatchPushNotification.configure do |config|
       config.endpoint = endpoint
       config.api_key = api_key
       config.rest_api_key = rest_api_key
@@ -30,7 +30,7 @@ RSpec.describe Batch::Client do
 
 
   it "can send a notification" do
-    client = Batch::Client.new
+    client = BatchPushNotification::Client.new
     response = client.send_notification(notification)
 
     expect(response['token']).to_not be_nil

@@ -1,5 +1,5 @@
 # Based on https://github.com/sethvargo/chef-api/blob/master/lib/chef-api/configurable.rb
-module Batch
+module BatchPushNotification
   #
   # Use this class to configure the Client
   #
@@ -16,14 +16,14 @@ module Batch
       end
     end
 
-    Batch::Configurable.keys.each do |key|
+    BatchPushNotification::Configurable.keys.each do |key|
       attr_accessor key
     end
 
     #
     # Configure the client like this:
     #
-    # Batch.configure do |config|
+    # BatchPushNotification.configure do |config|
     #   config.endpoint = "https://api.batch.com/1.0/"
     # end
     #

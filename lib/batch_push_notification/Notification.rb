@@ -1,4 +1,4 @@
-module Batch
+module BatchPushNotification
   class Notification
     def initialize(args = {})
       @group_id = args[:group_id]
@@ -21,7 +21,7 @@ module Batch
               "body": @body
           },
           "custom_payload": @custom_payload.to_json.to_s, # the API expects a string instead of a JSON object
-          sandbox: Batch.sandbox
+          sandbox: BatchPushNotification.sandbox
       }.to_json
     end
   end
