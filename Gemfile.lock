@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    batch (0.0.1)
+    batch (0.0.2)
       faraday
 
 GEM
