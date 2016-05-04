@@ -17,7 +17,6 @@ RSpec.describe BatchPushNotification::Client do
   let(:custom_payload) { {:poll_id => 1} }
   let(:notification) { BatchPushNotification::Notification.new({group_id: group_id, tokens: tokens, title: title, body: body, custom_payload: custom_payload}) }
 
-  #def initialize(group_id, tokens = [], custom_ids = [], title, body, custom_payload)
 
   before {
     BatchPushNotification.configure do |config|
@@ -31,8 +30,9 @@ RSpec.describe BatchPushNotification::Client do
 
   it "can send a notification" do
     client = BatchPushNotification::Client.new
-    response = client.send_notification(notification)
 
-    expect(response['token']).to_not be_nil
+    client.send_notification(notification)  do |response|
+      expect(response['token']).to_not be_nil
+    end
   end
 end
