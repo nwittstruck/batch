@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    batch_push_notification (0.1.0)
+    batch_push_notification (0.1.1)
       faraday
 
 GEM

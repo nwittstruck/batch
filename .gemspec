@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'batch_push_notification'
-  s.version     = '0.1.0'
+  s.version     = '0.1.1'
   s.summary     = "Batch"
   s.description = "A client for the batch.com Push Notification API"
   s.authors     = ["Nicholas Wittstruck"]

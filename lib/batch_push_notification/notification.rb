@@ -9,7 +9,7 @@ module BatchPushNotification
       @custom_payload = args[:custom_payload]
     end
 
-    def payload
+    def payload(sandbox)
       {
           "group_id": @group_id,
           "recipients": {
@@ -21,7 +21,7 @@ module BatchPushNotification
               "body": @body
           },
           "custom_payload": @custom_payload.to_json.to_s, # the API expects a string instead of a JSON object
-          sandbox: BatchPushNotification.sandbox
+          sandbox: sandbox
       }.to_json
     end
   end
